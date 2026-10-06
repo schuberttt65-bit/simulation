@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FFFDF5] text-slate-900 transition-colors duration-200;
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  }
+  .dark body {
+    @apply bg-[#0F111A] text-slate-100;
+  }
+}
+
+/* Neo-Brutalism + Claymorphism + Neumorphism Utilities */
+.neo-box {
+  border: 3px solid #000000;
+  box-shadow: 4px 4px 0px 0px #000000;
+  border-radius: 1.25rem;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .neo-box {
+  border: 3px solid #ffffff;
+  box-shadow: 4px 4px 0px 0px #ffffff;
+}
+
+.neo-box-hover:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #000000;
+}
+
+.dark .neo-box-hover:hover {
+  box-shadow: 6px 6px 0px 0px #ffffff;
+}
+
+.neo-button {
+  border: 3px solid #000000;
+  box-shadow: 3px 3px 0px 0px #000000;
+  border-radius: 1rem;
+  font-weight: 700;
+  transition: all 0.1s ease-in-out;
+}
+
+.dark .neo-button {
+  border: 3px solid #ffffff;
+  box-shadow: 3px 3px 0px 0px #ffffff;
+}
+
+.neo-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #000000;
+}
+
+.dark .neo-button:active {
+  box-shadow: 1px 1px 0px 0px #ffffff;
+}
+
+/* Claymorphic 3D Card */
+.clay-card {
+  border: 3px solid #000000;
+  border-radius: 1.5rem;
+  box-shadow: 
+    inset 2px 2px 6px rgba(255, 255, 255, 0.8),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.12),
+    5px 5px 0px 0px #000000;
+  transition: all 0.2s ease;
+}
+
+.dark .clay-card {
+  border: 3px solid #ffffff;
+  box-shadow: 
+    inset 2px 2px 6px rgba(255, 255, 255, 0.15),
+    inset -3px -3px 6px rgba(0, 0, 0, 0.5),
+    5px 5px 0px 0px #ffffff;
+}
+
+/* Bubbles animation for HCl test */
+@keyframes bubble-rise {
+  0% {
+    transform: translateY(0) scale(0.6);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-45px) scale(0.4);
+    opacity: 0;
+  }
+}
+
+.animate-bubble-1 {
+  animation: bubble-rise 1s infinite ease-out;
+}
+.animate-bubble-2 {
+  animation: bubble-rise 1.2s 0.2s infinite ease-out;
+}
+.animate-bubble-3 {
+  animation: bubble-rise 0.8s 0.4s infinite ease-out;
+}
